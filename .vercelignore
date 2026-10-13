@@ -1,6 +1,0 @@
-.env*
-.gitignore
-*.before-*.html
-dist
-avatar.before-*
-resume-src
