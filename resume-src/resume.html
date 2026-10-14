@@ -58,11 +58,11 @@
   </ul>
 
   <div class="row"><span><b>InsureFlow — insurance claims RAG pipeline</b><span class="tag">Client · In production</span></span><span class="right"><a href="https://github.com/yourgirltech/insuranceflow">GitHub</a></span></div>
-  <p class="stack">n8n · pgvector (HNSW) · Gemini embeddings · Gemini 2.5 Flash · Supabase · Next.js 15</p>
+  <p class="stack">n8n · pgvector (HNSW) · Gemini embeddings · Gemini Flash · Supabase · Next.js 15</p>
   <ul>
-    <li>First-notice-of-loss pipeline: retrieves policy wording per tenant with a similarity floor and returns a JSON coverage verdict with citations. Code strips any citation that wasn't retrieved.</li>
-    <li>Fails closed: malformed output, a lapsed policy or low confidence goes to adjuster review, with 48-hour escalation. I also built the Next.js operations app.</li>
-    <li>Built a 60-claim eval harness that blocks a release on any wrong approval. It confirmed the governing policy section is retrieved for every claim, and that failed model calls always fall back to an adjuster.</li>
+    <li>First-notice-of-loss pipeline: per-tenant retrieval of policy wording with a similarity floor, a JSON coverage verdict whose citations are checked in code, and fail-closed routing to adjuster review with 48-hour escalation.</li>
+    <li>Fixed it sending nearly every claim to review: it now recommends a decision on ~74% of clear-cut claims, adjusters agree with 92%, zero unsafe approvals (client-reported).</li>
+    <li>60-claim eval harness gates every release on zero wrong approvals. I also built the Next.js operations app.</li>
   </ul>
 
   <div class="row"><span><b>Exness BDM &amp; IB Sales Assistant — RAG agent with human handoff</b><span class="tag">Client · In production</span></span><span class="right"><a href="https://github.com/yourgirltech/exness-bdm-bot">GitHub</a></span></div>

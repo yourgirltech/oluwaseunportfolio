@@ -205,7 +205,7 @@ section.block { padding-block: 60px; border-top: 1px solid var(--line); }
 .decisions { padding-left: 18px; display: grid; gap: 9px; font-size: 15px; }
 .decisions li::marker { color: var(--accent); }
 .decisions b { font-weight: 600; }
-.side { display: grid; gap: 18px; align-content: start; }
+.side { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; align-content: start; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chip { font-family: var(--mono); font-size: 12px; padding: 3px 9px; border-radius: 6px; background: var(--sunk); color: var(--fg); }
 .plinks { display: flex; flex-wrap: wrap; gap: 16px; font-weight: 600; font-size: 15px; }
@@ -450,7 +450,7 @@ footer { padding-block: 28px 44px; color: var(--muted); font-size: 13px; font-fa
             <div class="side">
               <div><h4>Stack</h4><div class="chips"><span class="chip">Python 3.14</span><span class="chip">FastAPI</span><span class="chip">Pydantic v2</span><span class="chip">Anthropic SDK</span><span class="chip">Supabase</span><span class="chip">Postgres RLS</span><span class="chip">React + TS</span><span class="chip">n8n</span><span class="chip">Vapi</span><span class="chip">pytest</span></div></div>
               <div><h4>Outcomes · staff-reported</h4><ul class="decisions"><li>Median 35% less time per task, from 14 staff across 8 sites (3–6 months in use)</li><li>Appeal letters: about 50 → 22 minutes each</li><li>About 800 staff hours saved a month</li></ul></div>
-              <div><h4>Evidence</h4><ul class="decisions"><li>12 SQL migrations, each calling a shared tenant-isolation helper</li><li>Two-clinic data-isolation proof script</li><li>Unit, live-model and end-to-end tests per agent</li></ul></div>
+              <div><h4>Evidence</h4><ul class="decisions"><li>12 SQL migrations, each calling a shared tenant-isolation helper</li><li>Two-clinic data-isolation proof script</li><li>Unit, live-model and end-to-end tests per agent</li><li>GitHub Actions runs 10 offline test suites, the frontend build and a Docker image build on every push</li></ul></div>
               <div class="plinks"><a href="https://github.com/yourgirltech/Foresight" target="_blank" rel="noopener">Code &amp; specs</a></div>
             </div>
           </div>
@@ -496,8 +496,9 @@ footer { padding-block: 28px 44px; color: var(--muted); font-size: 13px; font-fa
   };
 }</pre>
               <p class="code-cap">If the model's output is malformed, the claim goes to a person instead of being guessed at.</p></div>
+              <div><h4>Outcomes · client-reported</h4><ul class="decisions"><li>Before the fix, nearly every claim went to an adjuster</li><li>After it, the AI recommends a decision on about 74% of clear-cut claims</li><li>Adjusters agree with 92% of its recommendations, with zero unsafe approvals</li></ul></div>
               <div><h4>Evals</h4><ul class="decisions"><li>A 60-claim test set runs through the workflow's own code and blocks a release if any claim is wrongly approved</li><li>The governing policy section was retrieved for all 60 claims</li><li>When the model API failed, every affected claim went to an adjuster, with zero wrong approvals</li></ul></div>
-              <div class="chips"><span class="chip">pgvector</span><span class="chip">Gemini embeddings</span><span class="chip">Gemini 2.5 Flash</span><span class="chip">Supabase</span><span class="chip">n8n</span></div>
+              <div class="chips"><span class="chip">pgvector</span><span class="chip">Gemini embeddings</span><span class="chip">Gemini Flash</span><span class="chip">Supabase</span><span class="chip">n8n</span></div>
               <div class="plinks"><a href="https://github.com/yourgirltech/insuranceflow" target="_blank" rel="noopener">Workflows, schema &amp; app</a></div>
             </div>
           </div>
@@ -833,7 +834,7 @@ footer { padding-block: 28px 44px; color: var(--muted); font-size: 13px; font-fa
             <div><dt>Backtesting · pandas</dt><dd>walk-forward and held-out validation in the crypto swing bot</dd></div>
             <div><dt>n8n automation</dt><dd>20 workflows in version control, across 9 repos</dd></div>
             <div><dt>Paystack</dt><dd>server-verified checkout</dd></div>
-            <div><dt>Netlify · Vercel · Render · Docker</dt><dd>deploys and local stacks</dd></div>
+            <div><dt>Netlify · Vercel · Render · Docker · GitHub Actions</dt><dd>deploys, local stacks and CI</dd></div>
           </dl>
         </div>
       </div>
